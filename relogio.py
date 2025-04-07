@@ -4,7 +4,6 @@ import asyncio
 import time
 
 def main(page:ft.Page):
-    # Configurações do app
     page.window.width = 800
     page.window.max_width = 800
     page.window.min_width = 800
@@ -25,7 +24,6 @@ def main(page:ft.Page):
 
     data_atual = datetime.today().weekday()
 
-    # Formatação da data antes de criar o texto
     data_formatada = f'{dias[data_atual].capitalize()}, {datetime.now().strftime("%d")} de {mes[int(datetime.now().strftime("%m")) - 1]}'
 
     data_texto = ft.Text(
@@ -66,19 +64,19 @@ def main(page:ft.Page):
                 content=hora_texto,
                 margin=ft.margin.only(
                     left=340,
-                    top=180  # Ajustando para centralizar um pouco mais
+                    top=180  
                 )
             ),
             ft.Container(
                 content=data_texto,
                 margin=ft.margin.only(
                     left=290,
-                    top=230  # Ajustando para centralizar em relação à hora
+                    top=230  
                 )
             ),
             ft.Container(
                 expand=True,
-                padding=ft.padding.only(top=380, left=100),  # Ajustando o padding para centralizar mais
+                padding=ft.padding.only(top=380, left=100),  
                 content=ft.Container(
                     width=600,
                     height=60,
@@ -108,7 +106,7 @@ def main(page:ft.Page):
             ),
             ft.WindowDragArea(width=800, height=400, content=ft.Container(bgcolor='transparent')),
             close := ft.Container(
-                margin=ft.margin.only(left=760, top=10),  # Ajustando para dar um pequeno espaço
+                margin=ft.margin.only(left=760, top=10),  
                 content=ft.Icon(
                     ft.icons.CLOSE,
                     color='white',
